@@ -1,1 +1,16 @@
-<h1>Blog posts will appear here</h1>
+{{!-- <h1>Blog posts will appear here</h1> --}}
+
+{{#each blogPosts as |blogPost| }}
+<div>
+    <div>
+        <h2>
+            <a href="/blogPost/{{blogPost.id}}">{{blogPost.title}}</a>
+        </h2>
+    </div>
+    <div>
+        <p>
+            {{blogPost.content}}
+        </p>
+    </div>
+</div>
+{{/each}}
