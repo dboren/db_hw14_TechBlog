@@ -29,7 +29,7 @@ Comment.init(
         entry_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'entry',
+                model: 'blogPost',
                 key: 'id',
             },
         },
@@ -39,7 +39,7 @@ Comment.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'entry',
+        modelName: 'comment',
     }
 );
 
