@@ -46,13 +46,22 @@ router.get('/blogpost/:id', async (req, res) => {
     }
   });
 
-  router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/dashboard');
-      return;
-    }
+router.get('/login', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
   
-    res.render('login');
-  });
+   res.render('login');
+ });
+
+router.get('/dashboard', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
+  
+  res.render('login');
+});
 
   module.exports = router;
