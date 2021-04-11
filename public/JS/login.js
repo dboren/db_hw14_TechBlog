@@ -13,8 +13,12 @@ const loginFormHandler = async (event) => {
 
         if (response.ok) {
             document.location.replace('/dashboard');
+            console.log('form submitted');
+            console.log('logged in: ', req.session.user_id);
         } else {
             alert(response.statusText);
+            console.log('something went wrong!')
+            console.log('logged in: ', req.session.user_id);
         }
     }
 };
